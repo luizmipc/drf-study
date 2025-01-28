@@ -1,2 +1,2 @@
 # drf-study
-set drf the right way
+set drf right
