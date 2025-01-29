@@ -1,0 +1,2 @@
+export SECRET_KEY="prod-secret-key"
+export ALLOWED="yourdomain.com, api.yourdomain.com"
