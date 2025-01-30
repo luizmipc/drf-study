@@ -1,0 +1,12 @@
+# This defines the different services (containers) that will be part of your application. 
+services:
+  web: # the name of the service
+    build: # how to build the docker image
+      context: . # states the directory to build the image
+    volumes: # Defines shared folders between the host machine and the container.
+      - .:/app 
+    working_dir: /app # Sets /app as the working directory inside the container.
+    ports: # Defines port mappings between the host machine and the container.
+      - "8000:8000" # Maps port 8000 on the host to port 8000 inside the container.
+    env_file: # Specifies an environment file to load environment variables.
+      - .envrc.dev
