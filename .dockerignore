@@ -1,0 +1,23 @@
+# Virtual environments
+.venv
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files
+.env
+.envrc
+
+# Logs
+logs/
+*.log
+
+# Miscellaneous
+.git
+.gitignore
+.vscode
+.idea
+node_modules/
