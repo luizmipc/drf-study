@@ -21,6 +21,7 @@ WORKDIR /app
 # Allows execution
 RUN chmod +x /entrypoint.sh
 
+# pip install is way slower than uv
 RUN python -m venv /venv && \
     /venv/bin/pip install --upgrade pip && \
     /venv/bin/pip install -r /app/requirements.txt && \
@@ -35,5 +36,3 @@ ENV PATH="/scripts:/venv/bin:$PATH"
 EXPOSE 8000
 
 CMD ["/entrypoint.sh"]
-
-
