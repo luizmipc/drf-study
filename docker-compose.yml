@@ -1,0 +1,12 @@
+services:
+  web:
+    build:
+      context: .
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY="dev-secret-key"
+      - DEBUG="true"
