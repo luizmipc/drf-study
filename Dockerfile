@@ -8,9 +8,6 @@ ENV PYTHONUNBUFFERED=1
 # Prevents Python from writing .pyc and __pycache__
 ENV PYTHONDONTWRITEBYTECODE=1
 
-# Defines where the venv will be for uv
-ENV UV_VENV=/app/.venv
-
 # Copies the project into the image
 COPY . /app
 COPY ./entrypoint.sh /entrypoint.sh
