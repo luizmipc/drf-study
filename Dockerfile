@@ -1,28 +1,29 @@
-FROM python:3.12-slim-bookworm
-# e.g., using a hash from a previous release
-COPY --from=ghcr.io/astral-sh/uv@sha256:2381d6aa60c326b71fd40023f921a0a3b8f91b14d5db6b90402e65a635053709 /uv /uvx /bin/
+# Use uv as a base image for dependencies
+FROM ghcr.io/astral-sh/uv@sha256:2381d6aa60c326b71fd40023f921a0a3b8f91b14d5db6b90402e65a635053709 AS uv_layer
 
+FROM python:3.12-slim-bookworm
+
+ENV PATH="/root/.local/bin/:$PATH"
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
-ENV UV_VENV=/app/.venv 
+ENV UV_COMPILE_BYTECODE=1
+ENV UV_LINK_MODE=copy
 
+COPY --from=uv_layer /uv /uvx /bin/
 
+WORKDIR /app
 
-# Copy the project into the image
-COPY pyproject.toml /pyproject.toml
+RUN --mount=type=cache,target=/root/.cache/uv \
+    --mount=type=bind,source=uv.lock,target=uv.lock \
+    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+    uv sync --frozen --no-install-project
+
 COPY ./entrypoint.sh /entrypoint.sh
 
+# remove in dev
+COPY ./app /app
+
 RUN chmod +x /entrypoint.sh
-
-
-# Create a virtual environment inside the container
-RUN uv sync --frozen
-
-# Ensure the installed binary is on the `PATH`
-ENV PATH="/root/.local/bin/:$PATH"
-
-# COPY . /app | add only in prod
-# WORKDIR /app | add only in prod if required
 
 EXPOSE 8000
 

@@ -1,5 +1,5 @@
 # Virtual environments
-.venv
+.venv/
 .envrc.*
 
 # Python cache
@@ -25,3 +25,5 @@ node_modules/
 
 # Exec
 start.sh
+
+README.md
