@@ -1,9 +1,10 @@
 # Virtual environments
 .venv
+.envrc.*
 
 # Python cache
-__pycache__/
-*.pyc
+**/__pycache__
+**/*.pyc
 *.pyo
 *.pyd
 
@@ -21,3 +22,6 @@ logs/
 .vscode
 .idea
 node_modules/
+
+# Exec
+start.sh

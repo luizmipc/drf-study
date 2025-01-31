@@ -3,9 +3,9 @@ services:
     build:
       context: .
     volumes:
-      - .:/app
-    working_dir: /app
+      - ./app:/app # rm only in prod
+    working_dir: /app # rm only in prod
     ports:
       - "8000:8000"
     env_file:
-      - .envrc.dev
+      - .envrc.dev # change to prod in prod
