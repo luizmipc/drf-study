@@ -23,8 +23,7 @@ COPY ./entrypoint.sh /entrypoint.sh
 # remove in dev
 COPY ./app /app
 
-RUN chmod +x /entrypoint.sh
-
 EXPOSE 8000
 
+RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
