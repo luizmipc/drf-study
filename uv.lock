@@ -44,6 +44,7 @@ dependencies = [
     { name = "django" },
     { name = "djangorestframework" },
     { name = "environs" },
+    { name = "markdown" },
 ]
 
 [package.metadata]
@@ -51,6 +52,7 @@ requires-dist = [
     { name = "django", specifier = ">=5.1.5" },
     { name = "djangorestframework", specifier = ">=3.15.2" },
     { name = "environs", specifier = ">=14.1.0" },
+    { name = "markdown", specifier = ">=3.7" },
 ]
 
 [[package]]
@@ -64,6 +66,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/3c/8f/952bd034eac79c8b68b6c770cb78c2bdcb3140d31ff224847f3520077d75/environs-14.1.0.tar.gz", hash = "sha256:a5f2afe9d5a21b468e74a3cceacf5d2371fd67dbb9a7e54fe62290c75a09cdfa", size = 30985 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d5/ad/57cfa3e8a006df88e723524127dbab2971a4877c97e7bad070257e15cb6c/environs-14.1.0-py3-none-any.whl", hash = "sha256:a7edda1668ddf1fbfcb7662bdc242dac25648eff2c7fdbaa5d959693afed7a3e", size = 15332 },
+]
+
+[[package]]
+name = "markdown"
+version = "3.7"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/54/28/3af612670f82f4c056911fbbbb42760255801b3068c48de792d354ff4472/markdown-3.7.tar.gz", hash = "sha256:2ae2471477cfd02dbbf038d5d9bc226d40def84b4fe2986e49b59b6b472bbed2", size = 357086 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3f/08/83871f3c50fc983b88547c196d11cf8c3340e37c32d2e9d6152abe2c61f7/Markdown-3.7-py3-none-any.whl", hash = "sha256:7eb6df5690b81a1d7942992c97fad2938e956e79df20cbc6186e9c3a77b1c803", size = 106349 },
 ]
 
 [[package]]
