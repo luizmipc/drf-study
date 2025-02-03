@@ -11,4 +11,5 @@ dependencies = [
     "environs>=14.1.0",
     "markdown>=3.7",
     "pylint>=3.3.4",
+    "ruff>=0.9.4",
 ]
